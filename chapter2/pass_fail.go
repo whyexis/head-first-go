@@ -30,11 +30,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	var status string // Declare the "status" variable here, so it is in scope for the rest of the function
 	if grade >= 60 { // Compare to the float64 in "grade" not the string in input
-		status := "Pass"
+		status = "passing"
 	} else {
-		status := "Fail"
+		status = "failing"
 	}
 
-	fmt.Println(status) // Print what the user typed.
+	fmt.Println("A grade of", grade, "is", status) // Print the entered grade and the pass/fail status.
 }
