@@ -1,2 +1,2 @@
-# head-first-go
+# Head First Go
 Learning Go
