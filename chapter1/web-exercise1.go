@@ -8,13 +8,13 @@
  * Fill in the blanks in the program so that it will run and produce the specified output. Note that count will have a type of int, but unitWeight will have a type of float64, so you’ll need to do a conversion before you can multiply the two together.
  * ------------------------------------------------------------------------
  */
- _______ main
+ package main
 
- ______ "fmt"
+ import "fmt"
  
- ____ main() {
-     ___ count int = 20
-     __________ := 0.4
-     totalWeight := _______(count) * unitWeight
+ func main() {
+     var count int = 20
+     unitWeight := 0.4
+     totalWeight := float64(count) * unitWeight
      fmt.Println(count, "cans weigh", totalWeight, "kilograms")
  }
