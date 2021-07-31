@@ -10,14 +10,18 @@
 
 package main
 
-import (
-	"fmt"
-)
+// Since we're only importing one package, we can use the
+// single-line format for "import".
+import "fmt"
 
 func main() {
+    // We can use short variable declarations for everything.
+	// Later words in multi-word variable names should be capitalized.
 	pebbleWeight := 0.1
 	rockWeight := 1.2
 	boulderWeight := 502.4
+    // Underscores are legal in variable names, but are not conventional.
+	// Remove underscore and capitalize the second word.
 	totalWeight := pebbleWeight + rockWeight + boulderWeight
 	fmt.Println(totalWeight)
 }
