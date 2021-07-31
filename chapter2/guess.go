@@ -40,20 +40,27 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Print("Make a guess: ")
-	input, err := reader.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
-	}
-	input = strings.TrimSpace(input)
-	guess, err := strconv.Atoi(input)
-	if err != nil {
-		log.Fatal(err)
-	}
+	for guesses := 10; guesses > 0; guesses -- {
+		fmt.Println("You have", guesses, "guesses left.")
 
-	if guess < target {
-		fmt.Println("Opps. Your guess was LOW.")
-	} else if guess > target {
-		fmt.Println("Opps. Your guess was HIGH.")
+		fmt.Print("Make a guess: ")
+		input, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatal(err)
+		}
+		input = strings.TrimSpace(input)
+		guess, err := strconv.Atoi(input)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		if guess < target {
+			fmt.Println("Opps. Your guess was LOW.")
+		} else if guess > target {
+			fmt.Println("Opps. Your guess was HIGH.")
+		} else {
+			fmt.Println("Good job! You guessed it!")
+			break 
+		}
 	}
  }
