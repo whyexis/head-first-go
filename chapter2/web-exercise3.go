@@ -27,7 +27,7 @@ import (
 	 var sum float64
 	 more := "y"
 
-	 for {
+	 for more != "n" && more != "N" {
 		fmt.Print("Enter a number: ")
 		input, err := reader.ReadString('\n')
 		if err != nil {
@@ -47,11 +47,6 @@ import (
 			log.Fatal(err)
 		}
 		more = strings.TrimSpace(more)
-		more = strings.ToLower(more)
-
-		if more == "n" {
-			break
-		}
 	 }
  
 	 fmt.Println("Sum is", sum)
