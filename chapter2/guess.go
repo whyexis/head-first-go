@@ -21,10 +21,15 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
+	"math/rand" // Full import path, package name: "rand"
+	"time"
 )
 
 func main() {
-	target := rand.Intn(100) + 1
-	fmt.Println("Please guess the target number: ")
+	seconds := time.Now().Unix() // Get the current date and time as an integer
+	rand.Seed(seconds) // Seed the random number generator
+	target := rand.Intn(100) + 1 // Generates an integer from 0 to 99, add 1 to make it from 1 to 100
+	fmt.Println("I have chosen a random number between 1 and 100.")
+	fmt.Println("Can you guess it?")
+	fmt.Println(target)
  }
