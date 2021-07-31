@@ -1,6 +1,6 @@
 /**
  * ------------------------------------------------------------------------
- * Guess Game.
+ * Guess challenges player to guess a random number.
  * Generate a random number from 1 to 100, and
  * store it as a target number for the player to guess.
  * Prompt the player to guess what the target number is,
@@ -36,9 +36,10 @@ func main() {
 	target := rand.Intn(100) + 1 // Generates an integer from 0 to 99, add 1 to make it from 1 to 100
 	fmt.Println("I have chosen a random number between 1 and 100.")
 	fmt.Println("Can you guess it?")
-	fmt.Println(target)
 
 	reader := bufio.NewReader(os.Stdin)
+
+	success := false
 
 	for guesses := 10; guesses > 0; guesses -- {
 		fmt.Println("You have", guesses, "guesses left.")
@@ -59,8 +60,13 @@ func main() {
 		} else if guess > target {
 			fmt.Println("Opps. Your guess was HIGH.")
 		} else {
+			success = true
 			fmt.Println("Good job! You guessed it!")
 			break 
 		}
+	}
+
+	if !success {
+		fmt.Println("Sorry. You didn't guess my number. It was:", target)
 	}
  }
