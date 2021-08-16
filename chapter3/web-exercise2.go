@@ -14,11 +14,15 @@ package main
 
 import "fmt"
 
-// YOUR CODE HERE: Write a "perimeter" function.
+// perimeter takes two float64 parameters, length and width.
+// And returns a float64 value representing the perimeter length.
+func perimeter(length float64, width float64) float64 {
+	return (length + width) * 2
+}
 
 func main() {
-	// YOUR CODE HERE: Call "perimeter" three times.
-	// Add the three return values together, and store the
-	// total in the "total" variable.
+	total := perimeter(8.2, 10.0)
+	total += perimeter(5.0, 5.2)
+	total += perimeter(6.2, 4.5)
 	fmt.Println("You'll need", total, "meters of fencing")
 }
