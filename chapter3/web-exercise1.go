@@ -15,8 +15,18 @@ package main
 
 import "fmt"
 
+// scoreSummary takes four parameters.
+// "name": "string", "score1", "score2", "score3": "float64".
 func scoreSummary(name string, score1 float64, score2 float64, score3 float64) {
+	// The parentheses ensure that the addition operations
+	// take place before dividing.
 	average := (score1 + score2 + score3) / 3
+	// %s formats a string value.
+	// %10s pads a string with spaces to a width of 10.
+	// %f formats a floating-point value.
+	// %8.2f pads a floating-point value with spaces to a
+	// width of 8, ensuring that a minimum of two decimal
+	// places are displayed.
 	fmt.Printf("%10s | %8.2f | %8.2f | %8.2f | %8.2f\n", name, score1, score2, score3, average)
 }
 
