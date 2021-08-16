@@ -31,9 +31,9 @@ import "fmt"
 	 functionA(2, 3)		// 5
 	 functionB(2, 3)		// 6
 	 functionC(true)		// false
-	 functionD("$", 4)	// $$$$
+	 functionD("$", 4)		// $$$$
 	 functionA(5, 6)		// 11
 	 functionB(5, 6)		// 30
 	 functionC(false)		// true
-	 functionD("ha", 3)	//hahaha	 
+	 functionD("ha", 3)		// hahaha	 
  }
