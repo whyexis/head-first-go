@@ -36,13 +36,16 @@ func checkError(err error) {
 func main() {
 	metresPerLitre = 10.0
 	var total float64
+	
 	amount, err := paintNeeded(4.2, 3.0)
 	checkError(err)
 	fmt.Printf("%.2f litres needed\n", amount)
 	total += amount
-	amount, err = paintNeeded(5.2, 3.5)
+
+	amount, err = paintNeeded(5.2, -3.5)
 	checkError(err)
 	fmt.Printf("%.2f litres needed\n", amount)
 	total += amount
+
 	fmt.Printf("Total: %.2f litres\n", total)
 }
