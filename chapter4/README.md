@@ -74,3 +74,32 @@ Use domain names and paths to ensure a package import path is unique e.g. `githu
 ## go get
 
 Download and install packages. Sets up the subdirectories needed to set up the appropriate import path.
+
+## go doc
+
+`go doc` gets the documentation for a package. e.g. `go doc strconv`
+
+Output
+
+* package name and import path
+* description of the package as a whole
+* list of all the functions the package exports
+* `go doc <package name> <function>` for detailed information on specific functions
+
+## doc comments
+
+Ordinary Go comments that appear immediately before a package clause or function declaration are treated as doc comments and will be displayed in `go doc`'s output
+
+Conventions
+* Comments should be complete sentences
+* Package comments should begin with "Package" followed by the package name
+* Function comments should begin with the name of the function they describe
+* Include code examples in comments by indenting them
+* Don't add extra punctuation characters for emphasis or formatting
+
+For standard libraries, documentation can also be viewed in the browser.
+
+## godoc
+
+1. Serve HTML documentation to yourself by starting a web server with the command `godoc -http=:6060`
+1. In a web browser, go to `http://localhost:6060/pkg/`
