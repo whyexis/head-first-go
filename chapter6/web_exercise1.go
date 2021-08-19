@@ -10,7 +10,7 @@ package main
 import "fmt"
 
 // YOUR CODE HERE: Define a printLines function.
-func printLines(days ...string) {
+func printLines(days []string) {
 	for _, day := range days {
 		fmt.Println(day)
 	}
@@ -23,5 +23,5 @@ func main() {
 	// weekdays.
 	weekdays := daysOfWeek[1:6]
 	// Pass that slice to printLines.
-	printLines(weekdays...)
+	printLines(weekdays)
 }
