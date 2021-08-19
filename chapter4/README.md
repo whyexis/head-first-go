@@ -50,3 +50,15 @@ Generally, the package name should match the name of the directory it's kept in,
 * The name should be abbreviated if the meaning is fairly obvious
 * One word, if possible. If two words are needed, they should not be separated by underscores, and the second word should not be capitalised.
 * Don't use a name that package users are likely to use as well.
+
+## Constants
+
+Named values that never change
+
+* `const` keyword
+* Must assign a value at the time the constant is declared
+* No short variable declaration syntax `:=`
+* Type can be inferred from the value assigned
+* Replace "hardcoded" literal values with constants, but name them with meaning
+* Typically declared at the package level
+* Constants that start with a capital letter are exported
