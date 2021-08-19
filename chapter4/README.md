@@ -62,3 +62,15 @@ Named values that never change
 * Replace "hardcoded" literal values with constants, but name them with meaning
 * Typically declared at the package level
 * Constants that start with a capital letter are exported
+
+## go install
+
+Compiles and saves the executable in a standard directory
+
+## Publishing packages
+
+Use domain names and paths to ensure a package import path is unique e.g. `github.com/headfirstgo/keyboard`
+
+## go get
+
+Download and install packages. Sets up the subdirectories needed to set up the appropriate import path.
