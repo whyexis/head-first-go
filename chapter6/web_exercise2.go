@@ -1,4 +1,15 @@
 // Appending to a slice
+/*
+ Sample Output
+ 
+ String to add: cashews
+ Continue? [Y/n]: y
+ String to add: peanuts
+ Continue? [Y/n]: y
+ String to add: almonds
+ Continue? [Y/n]: n
+ cashews, peanuts, almonds
+ */
 
 package main
 
