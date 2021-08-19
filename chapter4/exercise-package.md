@@ -25,9 +25,9 @@ Answer
 ```go
 package main
 
-import _
+import "my.com/me/myproject/mypackage"
 
 func main () {
-        _
+        mypackage.MyFunction()
 }
 ```
