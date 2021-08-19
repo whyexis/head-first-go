@@ -67,8 +67,7 @@ func main() {
 	// the program that was run.
 	arguments := os.Args[1:]
 	if len(arguments) != 2 {
-		err := fmt.Errorf("invalid number of arguments: %d", len(arguments))
-		check(err)
+		log.Fatal("usage: column <file name> <column number>")
 	}
 	// The first argument will be the file name.
 	fileName := arguments[0]
