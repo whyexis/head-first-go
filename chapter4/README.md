@@ -43,3 +43,10 @@ func Hi() {
 ```
 
 Generally, the package name should match the name of the directory it's kept in, but the *main* package is an exception.
+
+## Package Naming Conventions
+
+* All lowercase
+* The name should be abbreviated if the meaning is fairly obvious
+* One word, if possible. If two words are needed, they should not be separated by underscores, and the second word should not be capitalised.
+* Don't use a name that package users are likely to use as well.
