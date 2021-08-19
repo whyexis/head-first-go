@@ -16,12 +16,12 @@ func main() {
 	// keeping track of how many times you've seen each digit.
 	var tracker [10]int
 	for _, digit := range numbers {
-		tracker[digit] += 1
+		tracker[digit]++
 	}
 
 	// Finally, print out how many times each number
 	// occurred.
-	for i, freq := range tracker {
-		fmt.Printf("%d occurred %2d times\n", i, freq)
+	for number, count := range tracker {
+		fmt.Printf("%d occurred %2d times\n", number, count)
 	}
 }
