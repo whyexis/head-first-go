@@ -14,14 +14,14 @@ package main
 import "fmt"
 
 func main() {
-	numbers := _(_float64, _)
-	numbers_ = 19.7
+	numbers := make([]float64, 3)
+	numbers[0] = 19.7
 	numbers[2] = 25.2
-	for _, _ := range numbers {
+	for i, number := range numbers {
 		fmt.Println(i, number)
 	}
-	var letters = _string_
+	var letters = []string{"a", "b", "c"}
 	for i, letter := range letters {
-		fmt.Println(i, _)
+		fmt.Println(i, letter)
 	}
 }
