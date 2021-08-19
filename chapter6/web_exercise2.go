@@ -70,7 +70,7 @@ func main() {
 	more := true
 	// YOUR CODE HERE: Set up a slice to hold phrases the
 	// user enters.
-	
+	var phrases []string
 	// Loop until user chooses not to continue.
 	for more == true {
 		// Get the user's input.
@@ -81,12 +81,12 @@ func main() {
 		}
 		// YOUR CODE HERE: Add the user's input to the
 		// slice.
-		
+		phrases = append(phrases, input)
 		// Ask if the user wants to continue.
 		more = askToContinue()
 	}
 	// YOUR CODE HERE: Call strings.Join with your slice
 	// of strings, and the string ", " to join everything
 	// together.
-	
+	fmt.Println(strings.Join(phrases, ", "))
 }
