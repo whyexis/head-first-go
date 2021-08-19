@@ -12,6 +12,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"strconv"
 )
 
 // printColumn reads the specified file and prints the
@@ -64,15 +65,25 @@ func main() {
 	// If not, log an error message and exit. Remember that
 	// the first element of os.Args is always the name of
 	// the program that was run.
+	arguments := os.Args[1:]
+	if len(arguments) != 2 {
+		err := fmt.Errorf("invalid number of arguments: %d", len(arguments))
+		check(err)
+	}
 	// The first argument will be the file name.
+	fileName := arguments[0]
 	// Call strconv.ParseInt with the second command-line
 	// argument, a base of 10, and a bitSize of 64.
 	// Pass the error value from parseInt to "check", so
 	// any error will be reported.
+	colNum, err := strconv.ParseInt(arguments[1], 10, 64)
+	check(err)
 	// Call printColumn with the file name and column
 	// number. Note that ParseInt returns an int64 and
 	// printColumn wants an int, so you'll need to cast
 	// the type.
+	err = printColumn(fileName, int(colNum))
 	// Call "check" on the error value returned from
 	// printColumn.
+	check(err)
 }
