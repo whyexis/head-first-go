@@ -1,3 +1,12 @@
+/*
+ * Write down what the output of the program snippet
+ * a: 2
+ * b: not found
+ * c: 1
+ * d: not found
+ * e: 2
+ */
+
 package main
 
 import "fmt"
