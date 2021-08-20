@@ -1,11 +1,16 @@
-/*
+Package geo
+
+```go
 package geo
 
 type Coordinates struct {
 	Latitude  float64
 	Longitude float64
-*/
+```
 
+Main
+
+```go
 package main
 
 import (
@@ -18,3 +23,4 @@ func main() {
 	fmt.Println("Latitude:", location.Latitude)
 	fmt.Println("Longitude:", location.Longitude)
 }
+```
