@@ -10,6 +10,13 @@ func main() {
 	// YOUR CODE HERE: Process each element of "letters",
 	// keeping track of how many times you've seen "a",
 	// "b", or "c".
+	counts := make(map[string]int)
+	for _, letter := range letters {
+		counts[letter]++
+	}
 	// Finally, print out the number of times each letter
 	// occurred.
+	for letter, count := range counts {
+		fmt.Println(letter, "occured", count, "times")
+	}
 }
