@@ -15,7 +15,7 @@ func b() {
 }
 
 func main() {
-	a()
-	b()
+	go a()
+	go b()
 	fmt.Println("end main()")
 }
