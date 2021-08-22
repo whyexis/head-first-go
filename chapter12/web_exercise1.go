@@ -15,18 +15,20 @@ func (f Fire) Extinguish() {
 	fmt.Println("Fire lit:", f.lit)
 }
 
-func Camp() error {
+func Camp(bear bool) error {
 	var fire Fire
 	fire.Light()
 	defer fire.Extinguish()
-	return fmt.Errorf("Error: spotted a bear")
+	if bear {
+		return fmt.Errorf("spotted a bear")
+	}
 	fmt.Println("Toasting marshmallows")
 	return nil
 }
 
 func main() {
-	err := Camp()
+	err := Camp(true)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Error:", err)
 	}
 }
