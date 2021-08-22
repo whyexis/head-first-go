@@ -18,9 +18,9 @@ func (f Fire) Extinguish() {
 func Camp() error {
 	var fire Fire
 	fire.Light()
-	return fmt.Errorf("spotted a bear")
+	defer fire.Extinguish()
+	return fmt.Errorf("Error: spotted a bear")
 	fmt.Println("Toasting marshmallows")
-	fire.Extinguish()
 	return nil
 }
 
