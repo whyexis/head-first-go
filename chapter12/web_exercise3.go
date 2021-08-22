@@ -14,6 +14,6 @@ func main() {
 
 /* Ouptut Prediction
  * a
- * oh no
  * b
+ * oh no
  */
