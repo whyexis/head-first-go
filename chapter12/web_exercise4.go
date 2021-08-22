@@ -12,3 +12,8 @@ func main() {
 	myFunction()
 	fmt.Println("b")
 }
+
+/* Ouptut Prediction
+ * a
+ * oh no
+ */
