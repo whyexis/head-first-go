@@ -13,5 +13,12 @@ func main() {
 }
 
 /* Output
- *
+ * Opening refrigerator
+ * Closing refrigerator
+ * panic: refrigerator is empty
+ * go routine 1 [running]:
+ * main.snack()
+ *	<path>/main.go: 8 <address>
+ * main.main()
+ 	<path>/main.go: 12 <address>
  */
