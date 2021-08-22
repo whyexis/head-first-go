@@ -52,7 +52,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	err := coordinates.SetLongitude(-1122.08) // An invalid value
+	err = coordinates.SetLongitude(-1122.08) // An invalid value
 	if err != nil {
 		log.Fatal(err)
 	}
