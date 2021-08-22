@@ -37,7 +37,7 @@ func (t Truck) LoadCargo(cargo string) {
 type Vehicle interface {
 	Accelerate()
 	Brake()
-	Steer(direction string)
+	Steer(string)
 }
 
 func main() {
