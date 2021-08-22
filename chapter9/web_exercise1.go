@@ -9,7 +9,7 @@ type rectangle struct {
 
 // YOUR CODE HERE: Convert this function to a method on
 // the "rectangle" type named "info".
-func rectangleInfo(r rectangle) {
+func (r rectangle) info() {
 	fmt.Println("Length:", r.length)
 	fmt.Println("Width:", r.width)
 }
@@ -20,5 +20,5 @@ func main() {
 	r.width = 2.3
 	// YOUR CODE HERE: Update this function call to a
 	// method call.
-	rectangleInfo(r)
+	r.info()
 }
