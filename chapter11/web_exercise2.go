@@ -29,8 +29,16 @@ func Use(appliance Appliance) {
 	appliance.TurnOn()
 	// YOUR CODE HERE: If the appliance is a
 	// Fan, call its Oscillate method.
+	fan, ok := appliance.(Fan)
+	if ok {
+		fan.Oscillate()
+	}
 	// If the appliance is a CoffeePot, call
 	// its Brew method.
+	coffeePot, ok := appliance.(CoffeePot)
+	if ok {
+		coffeePot.Brew()
+	}
 }
 
 func main() {
