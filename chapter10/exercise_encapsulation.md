@@ -43,12 +43,20 @@ package main
 import (
 	"fmt"
 	"geo"
+	"log"
 )
 
 func main() {
 	coordinates := geo.Coordinates{}
-	coordinates.SetLatitude(37.42)
-	coordinates.SetLongitude(-122.08)
-	fmt.Println(coordinates)
+	err := coordinates.SetLatitude(37.42)
+	if err != nil {
+		log.Fatal(err)
+	}
+	err := coordinates.SetLongitude(-1122.08) // An invalid value
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(coordinates.Latitude())
+	fmt.Println(coordinates.Longitude())
 }
 ```
