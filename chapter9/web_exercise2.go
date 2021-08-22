@@ -8,7 +8,7 @@ type rectangle struct {
 }
 
 // Convert this function to a method on the "rectangle" type.
-func makeSquare(r *rectangle) {
+func (r *rectangle) makeSquare() {
 	if r.length > r.width {
 		r.length = r.width
 	} else {
@@ -16,14 +16,28 @@ func makeSquare(r *rectangle) {
 	}
 }
 
-func rectangleInfo(r rectangle) {
+func (r *rectangle) info() {
 	fmt.Println("Length:", r.length)
 	fmt.Println("Width:", r.width)
 }
 
 func main() {
-	var r rectangle
-	r.length = 4.2
-	r.width = 2.3
-	rectangleInfo(r)
+	longRectangle := rectangle{length: 4.2, width: 2.3}
+	fmt.Println("------------------------------------")
+	fmt.Println("Long rectangle before makeSquare()")
+	longRectangle.info()
+	longRectangle.makeSquare()
+	fmt.Println("------------------------------------")
+	fmt.Println("Long rectangle after makeSquare()")
+	longRectangle.info()
+
+	fmt.Println("------------------------------------")
+
+	wideRectangle := rectangle{length: 4.5, width: 9.0}
+	fmt.Println("Wide rectangle before makeSquare()")
+	wideRectangle.info()
+	wideRectangle.makeSquare()
+	fmt.Println("------------------------------------")
+	fmt.Println("Wide rectangle after makeSquare()")
+	wideRectangle.info()
 }
