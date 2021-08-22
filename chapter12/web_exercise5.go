@@ -18,3 +18,10 @@ func main() {
 	myFunction()
 	fmt.Println("b")
 }
+
+/* Ouptut Prediction
+ * a
+ * c
+ * b
+ * oh no
+ */
