@@ -35,11 +35,21 @@ func (s Sphere) SurfaceArea() float64 {
 }
 
 // YOUR CODE HERE: Define a Solid interface.
-
+type Solid interface {
+	Volume() float64
+	SurfaceArea() float64
+}
 // YOUR CODE HERE: Revise PrintInfo to accept a parameter
 // that satisfies the Solid interface.
-func PrintInfo(c Cuboid) {
-	fmt.Println(c)
-	fmt.Printf("Volume: %0.3f\n", c.Volume())
-	fmt.Printf("Surface Area: %0.3f\n", c.SurfaceArea())
+func PrintInfo(s Solid) {
+	fmt.Println(s)
+	fmt.Printf("Volume: %0.3f\n", s.Volume())
+	fmt.Printf("Surface Area: %0.3f\n", s.SurfaceArea())
+}
+
+func main() {
+	c := Cuboid{length: 2.5, width: 5.0, height: 10.5}
+	PrintInfo(c)
+	s := Sphere{radius: 2.0}
+	PrintInfo(s)
 }
