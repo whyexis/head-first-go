@@ -1,25 +1,26 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
-func a() {
+func a(channel chan string) {
 	for i := 0; i < 50; i++ {
-		fmt.Print("a")
+		channel <- "a"
 	}
 }
 
-func b() {
+func b(channel chan string) {
 	for i := 0; i < 50; i++ {
-		fmt.Print("b")
+		channel <- "b"
 	}
 }
 
 func main() {
-	go a()
-	go b()
-	time.Sleep(time.Second)
+	channel := make(chan string)
+	go a(channel)
+	go b(channel)
+	for i := 0; i < 50; i++ {
+		fmt.Printf(<-channel)
+		fmt.Printf(<-channel)
+	}
 	fmt.Println("end main()")
 }
