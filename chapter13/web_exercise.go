@@ -2,25 +2,31 @@ package main
 
 import "fmt"
 
-func a(channel chan string) {
+func a(done chan bool) {
 	for i := 0; i < 50; i++ {
-		channel <- "a"
+		fmt.Print("a")
 	}
+	done <- true
+
 }
 
-func b(channel chan string) {
+func b(done chan bool) {
 	for i := 0; i < 50; i++ {
-		channel <- "b"
+		fmt.Print("b")
 	}
+	done <- true
 }
 
 func main() {
-	channel := make(chan string)
-	go a(channel)
-	go b(channel)
-	for i := 0; i < 50; i++ {
-		fmt.Printf(<-channel)
-		fmt.Printf(<-channel)
-	}
+	// Create the channel
+	done := make(chan bool)
+	// Run each function as a goroutine,
+	// passing the channel to each.
+	go a(done)
+	go b(done)
+	// Read from the channel, which will block until the first goroutine is done.
+	<-done
+	// Block until the second goroutine is done
+	<-done
 	fmt.Println("end main()")
 }
