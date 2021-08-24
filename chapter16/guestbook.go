@@ -50,13 +50,26 @@ func viewHandler(writer http.ResponseWriter, request *http.Request) {
 func newHandler(writer http.ResponseWriter, request *http.Request) {
 	html, err := template.ParseFiles("new.html")
 	check(err)
-	err = html.Execute(writer, nil)	
+	err = html.Execute(writer, nil)
 	check(err)
+}
+
+func createHandler(writer http.ResponseWriter, request *http.Request) {
+	signature := request.FormValue("signature")
+	options := os.O_WRONLY | os.O_APPEND | os.O_CREATE // options for opening the file
+	file, err := os.OpenFile("signatures.txt", options, os.FileMode(0600))
+	check(err)
+	_, err = file.WriteString(signature + "\n")
+	check(err)
+	err = file.Close()
+	check(err)
+	http.Redirect(writer, request, "/guestbook", http.StatusFound)
 }
 
 func main() {
 	http.HandleFunc("/guestbook", viewHandler)
 	http.HandleFunc("/guestbook/new", newHandler)
+	http.HandleFunc("/guestbook/create", createHandler)
 	err := http.ListenAndServe("localhost:8080", nil)
 	log.Fatal(err)
 }
