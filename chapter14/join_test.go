@@ -8,12 +8,21 @@ import (
 // function name should being with "Test"
 // name after test is up to user
 // function will be passed a single parameter: a pointer to a testing.T value
+func TestOneElement(t *testing.T) {
+	list := []string{"apple"}
+	want := "apple"
+	got := JoinWithCommas(list)
+	if got != want {
+		t.Error(errorString(list, got, want))
+	}
+}
+
 func TestTwoElements(t *testing.T) {
 	list := []string{"apple", "orange"}
 	want := "apple and orange"
 	got := JoinWithCommas(list)
 	if got != want {
-		t.Errorf(errorString(list, got, want)) // call a method on the testing.T to fail the test
+		t.Error(errorString(list, got, want)) // call a method on the testing.T to fail the test
 	}
 }
 
@@ -22,7 +31,7 @@ func TestThreeElements(t *testing.T) {
 	want := "apple, orange, and pear"
 	got := JoinWithCommas(list)
 	if got != want {
-		t.Errorf(errorString(list, got, want)) // call a method on the testing.T to fail the test
+		t.Error(errorString(list, got, want)) // call a method on the testing.T to fail the test
 	}
 }
 
