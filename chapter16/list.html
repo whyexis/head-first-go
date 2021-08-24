@@ -4,5 +4,8 @@
          The data value passed to the template should be a slice.
          Loop over each element in the slice, and include them in
          the output, enclosed in <li></li> tags. -->
+         {{range .}}
+                <li>{{.}}</li>
+         {{end}}
   </ul>
 </html>
