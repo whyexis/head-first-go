@@ -23,7 +23,7 @@ func main() {
 	// YOUR CODE HERE:
 	// Set templateText so that the calls to executeTemplate
 	// below will produce the output shown.
-	templateText := ""
+	templateText := "{{range .}}- {{.}}\n{{end}}"
 	executeTemplate(templateText,
 		[]string{"apples", "oranges", "pears"})
 	executeTemplate(templateText,
