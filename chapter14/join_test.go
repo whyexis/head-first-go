@@ -15,6 +15,7 @@ type testData struct {
 // function will be passed a single parameter: a pointer to a testing.T value
 func TestJoinWithCommas(t *testing.T) {
 	tests := []testData{
+		testData{list: []string{}, want: ""},
 		testData{list: []string{"apple"}, want: "apple"},
 		testData{list: []string{"apple", "orange"}, want: "apple and orange"},
 		testData{list: []string{"apple", "orange", "pear"}, want: "apple, orange, and pear"},
