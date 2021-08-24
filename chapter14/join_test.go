@@ -7,14 +7,18 @@ import "testing" // *required* to use a type from the testing package, import th
 // function will be passed a single parameter: a pointer to a testing.T value
 func TestTwoElements(t *testing.T) {
 	list := []string{"apple", "orange"}
-	if JoinWithCommas(list) != "apple and orange" {
-		t.Error("didn't match expected value") // call a method on the testing.T to fail the test
+	want := "apple and orange"
+	got := JoinWithCommas(list)
+	if got != want {
+		t.Errorf("JoinWithCommas(%#v) = \"%s\", want \"%s\"", list, got, want) // call a method on the testing.T to fail the test
 	}
 }
 
 func TestThreeElements(t *testing.T) {
 	list := []string{"apple", "orange", "pear"}
-	if JoinWithCommas(list) != "apple, orange, and pear" {
-		t.Error("didn't match expected value") // most methods accep a string with a message explaining the reason the test failed
+	want := "apple, orange, and pear"
+	got := JoinWithCommas(list)
+	if got != want {
+		t.Errorf("JoinWithCommas(%#v) = \"%s\", want \"%s\"", list, got, want) // call a method on the testing.T to fail the test
 	}
 }
